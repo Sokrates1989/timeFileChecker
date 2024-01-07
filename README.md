@@ -3,7 +3,8 @@ Periodically writes timestamp to file allowing readyness probe to check if times
 
 ## Requirements
 
-Requires python and git to be used in the base project.
+Requires python, jq and git to be used in the base project.
+(jq is used in shell script to get config values install jq with "apk add jq")
 
 ## Install and information
 

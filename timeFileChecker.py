@@ -39,7 +39,9 @@ class TimeFileChecker(Thread):
 		fileUtils.createFileIfNotExists(self.timefile)
 
 		# Ensure state is sent often enough and amount minutes is positive.
-		writeTimeFileEveryXSeconds = int(config_array["writeTimeFileEveryXSeconds"])
+		writeTimeFileEveryXSeconds = int(os.getenv('writeTimeFileEveryXSeconds', config_array["writeTimeFileEveryXSeconds"]))
+		if not writeTimeFileEveryXSeconds:
+			writeTimeFileEveryXSeconds = 60
 		if writeTimeFileEveryXSeconds < 1:
 			writeTimeFileEveryXSeconds = 1
 		self.writeTimeFileEveryXSeconds = writeTimeFileEveryXSeconds 

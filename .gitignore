@@ -133,3 +133,6 @@ dmypy.json
 
 # Do not version config.txt . 
 config.txt
+
+# Do not version timefile.txt . 
+timefile.txt
